@@ -381,7 +381,9 @@
                         modified: rightModel
                     });
                 } else {
-                    editor = monaco.editor.create(document.getElementById('eddi'), {
+                   leftModel.dispose();
+                   leftModel = null;
+                   editor = monaco.editor.create(document.getElementById('eddi'), {
                         automaticLayout: true,
                         theme: 'vs-dark',
                         model: rightModel,
@@ -422,8 +424,18 @@
 
         function getDocumentFromMonaco() {
             let result = null;
-            if (rightModel != null && rightModel.getValue() != "") {
-                if (leftModel != null && leftModel.getValue() != rightModel.getValue()) {
+            if (rightModel.getValue() != "") {
+                if (leftModel != null) {//diff view (edit mode)
+                    if (leftModel.getValue() != rightModel.getValue()) {//changes found, obtain changed document
+                        if (rightModel.getLanguageId() === "json") {
+                            let metadataBlobRecord = new Blob([rightModel.getValue()], {type: "application/json"});
+                            result = new File([metadataBlobRecord], 'metadata.json');
+                        } else {
+                            let metadataBlobRecord = new Blob([unescapeXml(rightModel.getValue())], {type: "application/xml"});
+                            result = new File([metadataBlobRecord], 'metadata.xsd');
+                        }
+                    }
+                } else {//no diff view (create mode)
                     if (rightModel.getLanguageId() === "json") {
                         let metadataBlobRecord = new Blob([rightModel.getValue()], {type: "application/json"});
                         result = new File([metadataBlobRecord], 'metadata.json');
