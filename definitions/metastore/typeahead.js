@@ -50,6 +50,8 @@ let typeahead = {
             };
         };
 
+        console.log("Renderer " + node.renderer);
+
         let renderSelection = function(value){
             return node.formElement.url + value.id;
         }
