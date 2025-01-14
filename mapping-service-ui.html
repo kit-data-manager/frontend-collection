@@ -49,16 +49,16 @@
             <div class="fourteen wide column">
                 <div class="ui fluid icon input">
                     <input id="endpoint" type="text" placeholder="http://localhost:8095/" value="http://localhost:8095/">
-                    <button class="ui vertical animated button" tabindex="0" onclick="setUrl()">
+                    <button class="ui vertical animated button" tabindex="0" onclick="setUrl(document.getElementById('endpoint').value)">
                         <div class="hidden content">Reload</div>
                         <div class="visible content">
                             <i class="fa-solid fa-arrows-rotate"></i>
                         </div>
                     </button>
                     <script>
-                        function setUrl() {
-                            let url = document.getElementById("endpoint").value;
+                        function setUrl(url) {
                             document.getElementById("input-component").setAttribute("base-url", url);
+                            document.getElementById("endpoint").setAttribute("value", url);
                         }
                     </script>
                 </div>
@@ -75,16 +75,11 @@
             component.executeMapping(true)">Map document
                 </button>
             </div>
-            <script type="module">
-                import { ajaxBaseUrl, keycloak, tags, showServiceUrl, appDescription } from './js/mapping-service.settings.js';
-                applyConfig(ajaxBaseUrl, keycloak, tags, showServiceUrl, appDescription)
-            </script>
         </div>
-  </div>
     <script type="module">
         import { keycloak, showServiceUrl } from './settings/general.settings.js';
         import { ajaxBaseUrl, appDescription } from './settings/mapping-service.settings.js';
-        document.getElementById("input-component").setAttribute("base-url", ajaxBaseUrl);
+        setUrl(ajaxBaseUrl);
         applyConfig(keycloak, showServiceUrl, appDescription)
     </script>
 </body>
