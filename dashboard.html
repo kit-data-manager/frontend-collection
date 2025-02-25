@@ -2,8 +2,8 @@
 <html lang="en" xml:lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Frontend Collection Dashboard</title>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -14,7 +14,7 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@kit-data-manager/metadata-editor@0.9.3/deps/opt/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="./css/semantic.min.css">
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css"/>
     <style>
         html,
         body {
@@ -33,190 +33,393 @@
 </head>
 
 <body class="ui">
-    <div class="main">
-        <h1 class="ui block header">
-            <img id="app-logo" src="./images/Logo_KIT.png" class="ui circular image">
-            <div id="app-title" class="content">
-                Frontend Collection Dashboard
-                <div id="app-subtitle" class="sub header">A collection of web frontends</div>
+<div class="main">
+    <h1 class="ui block header">
+        <img id="app-logo" src="./images/Logo_KIT.png" class="ui circular image">
+        <div id="app-title" class="content">
+            Frontend Collection Dashboard
+            <div id="app-subtitle" class="sub header">A collection of web frontends</div>
+        </div>
+    </h1>
+
+    <div class="ui padded container">
+        <div class="ui large segment" id="app-description">
+            <p>This collection of generic web frontends provides access to RESTful services of the KIT Data Manager
+                service portfolio.
+                The idea is to have graphical user interfaces available such that certain base services can be
+                directly
+                used for performing
+                basic tasks without the need of integrating them in your own frontends before being able to use them
+                the
+                first time.
+            </p>
+
+            <p>
+                However, for some application cases, these generic web frontends might even be sufficient for direct
+                interaction with our
+                services, and they might be offered to the end-user. To allow that, all frontends of this collection
+                offer a certain degree
+                of customization to slightly adapt their presentation to specific needs.
+            </p>
+        </div>
+
+        <div class="ui special centered cards">
+            <!-- Cards for the different services -->
+            <!-- Card for the BaseRepo UI -->
+            <div class="card" id="base-repo-card">
+                <div class="blurring dimmable image">
+                    <div class="ui inverted dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="baserepo-ui" class="ui primary button">Open</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="base-repo-logo" src="./images/disks.jpg"/>
+                </div>
+                <div class="content">
+                    <a id="base-repo-title" class="header">BaseRepo UI</a>
+                    <div class="meta">
+                        <span id="base-repo-subtitle">Manage and access your research data described by DataCite metadata.</span>
+                    </div>
+                </div>
             </div>
-        </h1>
-
-        <div class="ui padded container">
-            <div class="ui large segment" id="app-description">
-                <p>This collection of generic web frontends provides access to RESTful services of the KIT Data Manager
-                    service portfolio.
-                    The idea is to have graphical user interfaces available such that certain base services can be
-                    directly
-                    used for performing
-                    basic tasks without the need of integrating them in your own frontends before being able to use them
-                    the
-                    first time.
-                </p>
-
-                <p>
-                    However, for some application cases, these generic web frontends might even be sufficient for direct
-                    interaction with our
-                    services, and they might be offered to the end-user. To allow that, all frontends of this collection
-                    offer a certain degree
-                    of customization to slightly adapt their presentation to specific needs.
-                </p>
+            <!-- Card for Search UI of BaseRepo -->
+            <div class="card" id="search-ui-base-repo-card">
+                <div class="blurring dimmable image">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="search-ui-base-repo" class="ui inverted button">Open</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="search-ui-base-repo-logo" src="./images/search_base-repo.jpg"/>
+                </div>
+                <div class="content">
+                    <a id="search-ui-base-repo-title" class="header">BaseRepo Search UI</a>
+                    <div class="meta">
+                        <span id="search-ui-base-repo-subtitle">An exemplary search UI for metadata within information indexed by the BaseRepo instance of this demonstrator.</span>
+                    </div>
+                </div>
             </div>
-
-            <div class="ui special centered cards">
-                <div class="card" id="metastore-card">
-                    <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                            <div class="content">
-                                <div class="center">
-                                    <div id="metastore-ui" class="ui inverted button">Open</div>
-                                </div>
+            <!-- Card for MetaStore UI -->
+            <div class="card" id="metastore-card">
+                <div class="blurring dimmable image">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="metastore-ui" class="ui inverted button">Open</div>
                             </div>
                         </div>
-                        <img src="./images/metadata.jpg">
                     </div>
-                    <div class="content">
-                        <a class="header">MetaStore UI</a>
-                        <div class="meta">
-                            <span>Manage and access your metadata schemas and documents.</span>
-                        </div>
+                    <img id="metastore-logo" src="./images/metadata.jpg"/>
+                </div>
+                <div class="content">
+                    <a id="metastore-title" class="header">MetaStore UI</a>
+                    <div class="meta">
+                        <span id="metastore-subtitle">Manage and access your metadata schemas and documents.</span>
                     </div>
                 </div>
-                <div class="card" id="base-repo-card">
-                    <div class="blurring dimmable image">
-                        <div class="ui inverted dimmer">
-                            <div class="content">
-                                <div class="center">
-                                    <div id="baserepo-ui" class="ui primary button">Open</div>
-                                </div>
+            </div>
+            <!-- Card for Search UI of MetaStore -->
+            <div class="card" id="search-ui-metastore-card">
+                <div class="blurring dimmable image">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="search-ui-metastore" class="ui inverted button">Open</div>
                             </div>
                         </div>
-                        <img src="./images/disks.jpg">
                     </div>
-                    <div class="content">
-                        <a class="header">BaseRepo UI</a>
-                        <div class="meta">
-                            <span>Manage and access your research data described by DataCite metadata.</span>
-                        </div>
-                    </div>
-                 </div>
-                <div class="card" id="typed-pid-maker-card">
-                    <div class="blurring dimmable image">
-                        <div class="ui inverted dimmer">
-                            <div class="content">
-                                <div class="center">
-                                    <div id="typed-pid-maker-ui" class="ui primary button">Open</div>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="./images/typed-pid-maker-full.svg" class="ui fluid image"
-                            style="padding: 1em; aspect-ratio: 640 / 427;">
-                    </div>
-                    <div class="content">
-                        <a class="header">Typed PID Maker UI</a>
-                        <div class="meta">
-                            <span>View all PIDs created with your Typed PID Maker instance.</span>
-                        </div>
+                    <img id="search-ui-metastore-logo" src="./images/search_metastore.jpg"/>
+                </div>
+                <div class="content">
+                    <a id="search-ui-metastore-title" class="header">MetaStore Search UI</a>
+                    <div class="meta">
+                        <span id="search-ui-metastore-subtitle">An exemplary search UI for metadata within information indexed by the MetaStore instance of this demonstrator.</span>
                     </div>
                 </div>
-                <div class="card" id="fdo-builder-card">
-                    <div class="blurring dimmable image">
-                        <div class="ui inverted dimmer">
-                            <div class="content">
-                                <div class="center">
-                                    <div id="fdo-builder-ui" class="ui primary button">Open</div>
-                                </div>
+            </div>
+            <!-- Card for Mapping Service UI -->
+            <div class="card" id="mapping-service-card">
+                <div class="blurring dimmable image">
+                    <div class="ui inverted dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="mapping-service-ui" class="ui primary button">Open</div>
                             </div>
                         </div>
-                        <img src="./images/typed-pid-maker-full.svg" class="ui fluid image"
-                             style="padding: 1em; aspect-ratio: 640 / 427;">
                     </div>
-                    <div class="content">
-                        <a class="header">FDO Builder UI</a>
-                        <div class="meta">
-                            <span>Graphical creation of FDOs.</span>
-                        </div>
+                    <img id="mapping-service-logo" src="./images/mapping_service.jpg"/>
+                </div>
+                <div class="content">
+                    <a id="mapping-service-title" class="header">Mapping Service</a>
+                    <div class="meta">
+                        <span id="mapping-service-subtitle">View Mapping Service interface.</span>
                     </div>
                 </div>
-                <div class="card" id="mapping-service-card">
-                    <div class="blurring dimmable image">
-                        <div class="ui inverted dimmer">
-                            <div class="content">
-                                <div class="center">
-                                    <div id="mapping-service-ui" class="ui primary button">Open</div>
-                                </div>
+            </div>
+            <!-- Card for Typed PID Maker UI -->
+            <div class="card" id="typed-pid-maker-card">
+                <div class="blurring dimmable image">
+                    <div class="ui inverted dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="typed-pid-maker-ui" class="ui primary button">Open</div>
                             </div>
                         </div>
-                        <img src="./images/mapping_service.jpg">
                     </div>
-                    <div class="content">
-                        <a class="header">Mapping Service</a>
-                        <div class="meta">
-                            <span>View Mapping Service interface.</span>
-                        </div>
+                    <img id="typed-pid-maker-logo" src="./images/typed-pid-maker-full.svg" class="ui fluid image"
+                         style="padding: 1em; aspect-ratio: 640 / 427;"/>
+                </div>
+                <div class="content">
+                    <a id="typed-pid-maker-title" class="header">Typed PID Maker UI</a>
+                    <div class="meta">
+                        <span id="typed-pid-maker-subtitle">View all PIDs created with your Typed PID Maker instance.</span>
                     </div>
                 </div>
-                <script>
-                    if(!showMetaStore){
-                        $('#metastore-card').attr("style", "display:none");
-                    }
-                    if(!showBaseRepo){
-                        $('#base-repo-card').attr("style", "display:none");
-                    }
-                    if(!showTypedPIDMaker){
-                        $('#typed-pid-maker-card').attr("style", "display:none");
-                    }
-                    if(!showFDOBuilder){
-                        $('#fdo-builder-card').attr("style", "display:none");
-                    }
-                    if(!showMappingService){
-                        $('#mapping-service-card').attr("style", "display:none");
-                    }
+            </div>
+            <!-- Card for FDO Builder UI -->
+            <div class="card" id="fdo-builder-card">
+                <div class="blurring dimmable image">
+                    <div class="ui inverted dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="fdo-builder-ui" class="ui primary button">Open</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="fdo-builder-logo" src="./images/typed-pid-maker-full.svg" class="ui fluid image"
+                         style="padding: 1em; aspect-ratio: 640 / 427;"/>
+                </div>
+                <div class="content">
+                    <a id="fdo-builder-title" class="header">FDO Builder UI</a>
+                    <div class="meta">
+                        <span id="fdo-builder-subtitle">Graphical creation of FDOs.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Search UI of Typed PID Maker -->
+            <div class="card" id="search-ui-fdo-card">
+                <div class="blurring dimmable image">
+                    <div class="ui inverted dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="search-ui-fdo" class="ui primary button">Open</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="search-ui-fdo-logo" src="./images/search_fdo.png"/>
+                </div>
+                <div class="content">
+                    <a id="search-ui-fdo-title" class="header">FAIR DO Search UI</a>
+                    <div class="meta">
+                        <span id="search-ui-fdo-subtitle">A basic search UI for querying FAIR Digital Objects indexed by the Typed PID Maker instance of this demonstrator.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for FAIR-DOscope -->
+            <div class="card" id="fairdoscope-card">
+                <div class="blurring dimmable image">
+                    <div class="ui inverted dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="fairdoscope-ui" class="ui primary button">Open</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="fairdoscope-ui-logo" src="./images/logo.png"/>
+                </div>
+                <div class="content">
+                    <a id="fairdoscope-ui-title" class="header">FAIR-DOscope</a>
+                    <div class="meta">
+                        <span id="fairdoscope-ui-subtitle">FAIR-DOscope is an easy-to-use, generic FAIR Digital Object viewer and browser.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for EVOKS Service -->
+            <div class="card" id="evoks-service-card">
+                <div class="blurring dimmable image">
+                    <div class="ui inverted dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="evoks-service-ui" class="ui primary button">Open</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="evoks-service-logo" src="./images/skosmos.png"/>
+                </div>
+                <div class="content">
+                    <a id="evoks-service-title" class="header">SKOSMOS Service</a>
+                    <div class="meta">
+                        <span id="evoks-service-subtitle">SKOSMOS instance for MatWerk published controlled vocabularies.</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Card for Monitoring UI -->
+            <div class="card" id="monitoring-ui-card">
+                <div class="blurring dimmable image">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                <div id="monitoring-ui" class="ui inverted button">Open</div>
+                            </div>
+                        </div>
+                    </div>
+                    <img id="monitoring-ui-logo" src="./images/monitoring.jpg"/>
+                </div>
+                <div class="content">
+                    <a id="monitoring-ui-title" class="header">Monitoring UI</a>
+                    <div class="meta">
+                            <span id="monitoring-ui-subtitle">A clean and extensive monitoring UI for the demonstrator's backend services.<br/>
+                                <i class="fa-solid fa-triangle-exclamation"></i><b>Only for internal use.</b><i
+                                        class="fa-solid fa-triangle-exclamation"></i></span>
+                    </div>
+                </div>
+            </div>
+            <script>
+                if (!showBaseRepo) {
+                    $('#base-repo-card').attr("style", "display:none");
+                } else {
+                    $('#base-repo-logo').attr("src", baseRepoCardDescription["app-logo"]);
+                    $('#base-repo-title').html(baseRepoCardDescription["app-title"]);
+                    $('#base-repo-subtitle').html(baseRepoCardDescription["app-subtitle"]);
+                }
+                if (!showSearchUIBaseRepo) {
+                    $('#search-ui-base-repo-card').attr("style", "display:none");
+                } else {
+                    $('#search-ui-base-repo-logo').attr("src", searchUIBaseRepoCardDescription["app-logo"]);
+                    $('#search-ui-base-repo-title').html(searchUIBaseRepoCardDescription["app-title"]);
+                    $('#search-ui-base-repo-subtitle').html(searchUIBaseRepoCardDescription["app-subtitle"]);
+                }
+                if (!showMetaStore) {
+                    $('#metastore-card').attr("style", "display:none");
+                } else {
+                    $('#metastore-logo').attr("src", metastoreCardDescription["app-logo"]);
+                    $('#metastore-title').html(metastoreCardDescription["app-title"]);
+                    $('#metastore-subtitle').html(metastoreCardDescription["app-subtitle"]);
+                }
+                if (!showSearchUIMetaStore) {
+                    $('#search-ui-metastore-card').attr("style", "display:none");
+                } else {
+                    $('#search-ui-metastore-logo').attr("src", searchUIMetastoreCardDescription["app-logo"]);
+                    $('#search-ui-metastore-title').html(searchUIMetastoreCardDescription["app-title"]);
+                    $('#search-ui-metastore-subtitle').html(searchUIMetastoreCardDescription["app-subtitle"]);
+                }
+                if (!showMappingService) {
+                    $('#mapping-service-card').attr("style", "display:none");
+                } else {
+                    $('#mapping-service-logo').attr("src", mappingServiceCardDescription["app-logo"]);
+                    $('#mapping-service-title').html(mappingServiceCardDescription["app-title"]);
+                    $('#mapping-service-subtitle').html(mappingServiceCardDescription["app-subtitle"]);
+                }
+                if (!showTypedPIDMaker) {
+                    $('#typed-pid-maker-card').attr("style", "display:none");
+                } else {
+                    $('#typed-pid-maker-logo').attr("src", typedPIDMakerCardDescription["app-logo"]);
+                    $('#typed-pid-maker-title').html(typedPIDMakerCardDescription["app-title"]);
+                    $('#typed-pid-maker-subtitle').html(typedPIDMakerCardDescription["app-subtitle"]);
+                }
+                if (!showFDOBuilder) {
+                    $('#fdo-builder-card').attr("style", "display:none");
+                } else {
+                    $('#fdo-builder-logo').attr("src", fdoBuilderCardDescription["app-logo"]);
+                    $('#fdo-builder-title').html(fdoBuilderCardDescription["app-title"]);
+                    $('#fdo-builder-subtitle').html(fdoBuilderCardDescription["app-subtitle"]);
+                }
+                if (!showSearchUIFDO) {
+                    $('#search-ui-fdo-card').attr("style", "display:none");
+                } else {
+                    $('#search-ui-fdo-logo').attr("src", searchUIFDOCardDescription["app-logo"]);
+                    $('#search-ui-fdo-title').html(searchUIFDOCardDescription["app-title"]);
+                    $('#search-ui-fdo-subtitle').html(searchUIFDOCardDescription["app-subtitle"]);
+                }
+                if (!showFAIRDOscope) {
+                    $('#fairdoscope-card').attr("style", "display:none");
+                } else {
+                    $('#fairdoscope-ui-logo').attr("src", fairdoscopeCardDescription["app-logo"]);
+                    $('#fairdoscope-ui-title').html(fairdoscopeCardDescription["app-title"]);
+                    $('#fairdoscope-ui-subtitle').html(fairdoscopeCardDescription["app-subtitle"]);
+                }
+                if (!showEVOKSService) {
+                    $('#evoks-service-card').attr("style", "display:none");
+                } else {
+                    $('#evoks-service-logo').attr("src", evoksServiceCardDescription["app-logo"]);
+                    $('#evoks-service-title').html(evoksServiceCardDescription["app-title"]);
+                    $('#evoks-service-subtitle').html(evoksServiceCardDescription["app-subtitle"]);
+                }
+                if (!showMonitoringUI) {
+                    $('#monitoring-ui-card').attr("style", "display:none");
+                } else {
+                    $('#monitoring-ui-logo').attr("src", monitoringUICardDescription["app-logo"]);
+                    $('#monitoring-ui-title').html(monitoringUICardDescription["app-title"]);
+                    $('#monitoring-ui-subtitle').html(monitoringUICardDescription["app-subtitle"]);
+                }
 
-                    $('#app-logo').attr("src", appDescription["app-logo"]);
-                    let header = appDescription["app-title"] +
-                        '<div id="app-subtitle" class="sub header">' + appDescription["app-subtitle"] + '</div>';
+                $('#app-logo').attr("src", appDescription["app-logo"]);
+                let header = appDescription["app-title"] +
+                    '<div id="app-subtitle" class="sub header">' + appDescription["app-subtitle"] + '</div>';
 
-                    $('#app-title').html(header);
-                    $('#app-description').html(appDescription["app-description"]);
-                </script>
+                $('#app-title').html(header);
+                $('#app-description').html(appDescription["app-description"]);
+            </script>
 
+        </div>
+    </div>
+</div>
+<div class="ui inverted attached footer segment">
+    <div class="ui container">
+        <div class="ui secondary inverted menu">
+            <div class="item">
+                <a href="https://github.com/kit-data-manager/frontend-collection"><em
+                        class="fa-brands fa-github"></em></a>
+            </div>
+            <div class="right item">
+                <a href="https://www.kit.edu/legals.php">Legals</a>
             </div>
         </div>
     </div>
-    <div class="ui inverted attached footer segment">
-        <div class="ui container">
-            <div class="ui secondary inverted menu">
-                <div class="item">
-                    <a href="https://github.com/kit-data-manager/frontend-collection"><em
-                            class="fa-brands fa-github"></em></a>
-                </div>
-                <div class="right item">
-                    <a href="https://www.kit.edu/legals.php">Legals</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        $('.special.cards .image').dimmer({
-            on: 'hover'
-        });
-        $('#metastore-ui').click(() => {
-            window.open("schema-management.html", "_self");
-        });
-        $('#baserepo-ui').click(() => {
-            window.open("repo-management.html", "_self");
-        });
-        $('#typed-pid-maker-ui').click(() => {
-            window.open("typed-pid-maker-ui.html", "_self");
-        });
-        $('#fdo-builder-ui').click(() => {
-            window.open("fdo-builder-ui.html", "_self");
-        });
-        $('#mapping-service-ui').click(() => {
-            window.open("mapping-service-ui.html", "_self");
-        });
-    </script>
+</div>
+<script>
+    $('.special.cards .image').dimmer({
+        on: 'hover'
+    });
+    $('#baserepo-ui').click(() => {
+        window.open("repo-management.html", "_self");
+    });
+    $('#search-ui-base-repo').click(() => {
+        window.open("elastic-search-base-repo.html", "_self");
+    });
+    $('#metastore-ui').click(() => {
+        window.open("schema-management.html", "_self");
+    });
+    $('#search-ui-metastore').click(() => {
+        window.open("elastic-search-metastore.html", "_self");
+    });
+    $('#mapping-service-ui').click(() => {
+        window.open("mapping-service-ui.html", "_self");
+    });
+    $('#typed-pid-maker-ui').click(() => {
+        window.open("typed-pid-maker-ui.html", "_self");
+    });
+    $('#fdo-builder-ui').click(() => {
+        window.open("fdo-builder-ui.html", "_self");
+    });
+    $('#search-ui-fdo').click(() => {
+        window.open("elastic-search-fdo.html", "_self");
+    });
+    $('#fairdoscope-ui').click(() => {
+        window.open("/fairdoscope/index.html?pid=21.T11981/6ab464ed-978b-4996-876f-f68ea913a308", "_self");
+    });
+    $('#evoks-service-ui').click(() => {
+        window.open("/evoks/de/index.html", "_self");
+    });
+     $('#monitoring-ui').click(() => {
+        window.open("/monitoring/", "_self");
+    });
+
+</script>
 </body>
 
 </html>
